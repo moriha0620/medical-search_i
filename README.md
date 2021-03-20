@@ -1,24 +1,31 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## searches テーブル
 
-Things you may want to cover:
+| Column                    | Type    | Options                   |
+| ------------------------- | ------  | ------------------------- |
+| subject                   | string  | null: false               |
+| area                      | string  | null: false               |
+| route                     | string  | null: false               |
+| station                   | string  | null: false               |
 
-* Ruby version
+### Association
+- has_many :hospitals
 
-* System dependencies
 
-* Configuration
+## hospitals テーブル
 
-* Database creation
+| Column                    | Type    | Options                   |
+| ------------------------- | ------  | ------------------------- |
+| name                      | string  | null: false               |
+| address                   | string  | null: false               |
+| phone_number              | string  | null: false               |
+| dr_name                   | string  | null: false               |
+| web_url                   | string  | null: false, unique: true |
+| holiday                   | string  | null: false               |
+| department                | string  | null: false               |
+| business_hours            | string  | null: false               |
 
-* Database initialization
+### Association
+- belongs_to :search
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
